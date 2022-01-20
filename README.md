@@ -1,5 +1,8 @@
 # Effect Modelling
 
+### VAE MNIST
+* vae_mnist/vae_mnist.ipynb
+
 ### Dataset 
 
 * Subset generator || vae_nsynth/utils_scripts/subset.ipynb
