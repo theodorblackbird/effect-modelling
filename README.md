@@ -1,7 +1,25 @@
-The dataset folder contains the data processor, which construct a distorted dataset from the NSYNTH dataset.
-Model defines the VAE as well as the architecture of the model (number of layers, layer types, kernels...).
-The training and setting of hyperparameters (number of epochs, batch size...). Finally, the folder util_scripts
-contains a python script for training on a small subset of the whole dataset, thus allowing for quick training 
-and tuning, and test_inference, which is used for sampling from the latent, comparing between the mel-spectrogram
-of a sample from the dataset and the reconstructed mel-spectrogram, and the inverse transformation from 
-mel-spectro to wav. Finally, resume_train allows us to re-run the training from a given epoch.
+# Effect Modelling
+
+### Dataset 
+
+* Subset generator || vae_nsynth/utils_scripts/subset.ipynb
+* Distorted generator (Pedalboard/Crave) || vae_nsynth/utils_scirpts/data_construct.ipynb
+* NSynth Dataset Pytorch class || vae_nsynth/dataset/nsynth.py
+
+### Training 
+
+* train.py : launch train, save each epoch, grid-search.
+* resume_train.py : resume train from saved model.
+* test model and compare melspectrograms : vae_nsynth/utils_scripts/test_inference.ipynb
+
+### Model
+
+* Convolutional models in vae_nsynth/model/
+
+
+![model](images/basic_block.svg)
+![model](images/encoder.svg)
+![model](images/bottleneck.svg)
+![model](images/decoder.svg)
+
+
